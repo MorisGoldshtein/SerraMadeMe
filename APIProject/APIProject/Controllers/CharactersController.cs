@@ -70,7 +70,10 @@ namespace APIProject.Controllers
         {
             var response = new Response();
 
-            character.CreationDate = DateTime.Now;
+            if (character.CreationDate == DateTime.MinValue)
+            {
+                character.CreationDate = DateTime.Now;
+            }
 
             _context.Characters.Add(character);
             try
@@ -112,7 +115,11 @@ namespace APIProject.Controllers
                 return response;
             }
 
-            character.CreationDate = DateTime.Now;
+
+            if(character.CreationDate == DateTime.MinValue) 
+            {
+                character.CreationDate = DateTime.Now;
+            }
             _context.Entry(character).State = EntityState.Modified;
 
             try
@@ -145,7 +152,10 @@ namespace APIProject.Controllers
         {
             var response = new Response();
 
-            character.CreationDate = DateTime.Now;
+            if (character.CreationDate == DateTime.MinValue)
+            {
+                character.CreationDate = DateTime.Now;
+            }
             _context.Characters.Add(character);
             try
             {
