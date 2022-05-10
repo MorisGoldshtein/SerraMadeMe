@@ -16,7 +16,9 @@ intended for that specific request.
 referring to Weapons in the Weapons DB. If you attempt
 to DELETE a Weapon that is part of ANY Character, you 
 will see a 500 stack error. You must remove the Weapon 
-Id from the Character(s) having them via PUTs.
+Id from the Character(s) having them via PUTs. The same
+applies to if you attempt to POST/PUT a character with a 
+weapon id that does not exist in Weapons. 
 
 5. Any Character can be deleted at any time as nothing 
 in the Weapons DB has a foreign key referencing anything 
